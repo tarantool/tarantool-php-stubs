@@ -8,6 +8,11 @@
         {
             "name": "Eugene Leonovich",
             "email": "gen.work@gmail.com"
+        },
+        {
+            "name": "Boris Gorbylev",
+            "email": "ekho@ekho.name",
+            "homepage": "https://github.com/ekho/"
         }
     ],
     "require": {
