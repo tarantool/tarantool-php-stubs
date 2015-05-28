@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * This is a stub file of tarantool-php extension for various PHP IDEs
+ */
 class Tarantool
 {
     /**
@@ -10,10 +13,16 @@ class Tarantool
     {
     }
 
+    /**
+     * @throws Exception
+     */
     public function connect()
     {
     }
 
+    /**
+     *
+     */
     public function close()
     {
     }
@@ -34,8 +43,8 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space
-     * @param array           $key
+     * @param string|int      $space        Space number or name
+     * @param array           $key          Key can be scalar or php array (may be empty)
      * @param string|int|null $index
      * @param int|null        $limit
      * @param int|null        $offset
@@ -48,7 +57,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int $space
+     * @param string|int $space     Space number or name
      * @param array      $values
      *
      * @return array
@@ -58,7 +67,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int $space
+     * @param string|int $space     Space number or name
      * @param array      $values
      *
      * @return array
@@ -68,10 +77,41 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space
-     * @param int             $key
+     * @param string|int      $space        Space number or name
+     * @param int             $key          Key can be scalar or php array (may be empty)
      * @param array           $operations
      * @param string|int|null $index
+     *
+     * <operations> ex.:
+     * array(
+     *   array(
+     *     "field" => <number>,
+     *     "op"    => ":",
+     *     "offset"=> <number>,
+     *     "length"=> <number>,
+     *     "list"  => <string>
+     *   ),
+     *   array(
+     *     "field" => <number>,
+     *     "op" => ("+"|"-"|"&"|"^"|"#"),
+     *     "arg" => <number>
+     *   ),
+     *   array(
+     *     "field" => <number>,
+     *     "op"    => ("="|"!"),
+     *     "arg"   => <serializable>
+     *   ),
+     * )
+     *
+     * <serializable> - any simple type which converts to MsgPack (scalar/array).
+     * ":" - command `splice` - replace "length" bites in "field" to "list" beginning from "offset".
+     * "+" - add "arg" to "field"
+     * "-" - sub "arg" from "field"
+     * "&" - bitwise "OR" with "field" and "arg" and place result to "field"
+     * "^" - bitwise "Exclusive OR" (XOR) with "field" and "arg" and place result to "field"
+     * "=" - assign "arg" to "field"
+     * "!" - assign "arg" before "field"
+     * "#" - remove "arg" fields beginning from "field"
      *
      * @return array
      */
@@ -80,7 +120,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space
+     * @param string|int      $space Space number or name
      * @param array           $key
      * @param string|int|null $index
      *
@@ -91,7 +131,7 @@ class Tarantool
     }
 
     /**
-     * @param string     $functionName
+     * @param string     $functionName Stored procedure (function) name
      * @param array|null $args
      *
      * @return array
@@ -110,10 +150,17 @@ class Tarantool
     {
     }
 
+    /**
+     * Alias for flush_schema() method
+     * @see Tarantool::flush_schema()
+     */
     public function flushSchema()
     {
     }
 
+    /**
+     *
+     */
     public function flush_schema()
     {
     }
