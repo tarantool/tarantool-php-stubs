@@ -151,7 +151,8 @@ class Tarantool
     }
 
     /**
-     * alias for flush_schema()
+     * alias for flush_schema() method
+     * @see Tarantool::flush_schema()
      */
     public function flushSchema()
     {
