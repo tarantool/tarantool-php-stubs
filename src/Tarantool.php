@@ -43,8 +43,8 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space        space number or name
-     * @param array           $key          key can be scalar or php array (may be empty)
+     * @param string|int      $space        Space number or name
+     * @param array           $key          Key can be scalar or php array (may be empty)
      * @param string|int|null $index
      * @param int|null        $limit
      * @param int|null        $offset
@@ -57,7 +57,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int $space     space number or name
+     * @param string|int $space     Space number or name
      * @param array      $values
      *
      * @return array
@@ -67,7 +67,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int $space     space number or name
+     * @param string|int $space     Space number or name
      * @param array      $values
      *
      * @return array
@@ -77,8 +77,8 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space        space number or name
-     * @param int             $key          key can be scalar or php array (may be empty)
+     * @param string|int      $space        Space number or name
+     * @param int             $key          Key can be scalar or php array (may be empty)
      * @param array           $operations
      * @param string|int|null $index
      *
@@ -120,7 +120,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space space number or name
+     * @param string|int      $space Space number or name
      * @param array           $key
      * @param string|int|null $index
      *
@@ -131,7 +131,7 @@ class Tarantool
     }
 
     /**
-     * @param string     $functionName stored procedure (function) name
+     * @param string     $functionName Stored procedure (function) name
      * @param array|null $args
      *
      * @return array
@@ -151,7 +151,7 @@ class Tarantool
     }
 
     /**
-     * alias for flush_schema() method
+     * Alias for flush_schema() method
      * @see Tarantool::flush_schema()
      */
     public function flushSchema()
