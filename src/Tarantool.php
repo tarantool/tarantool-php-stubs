@@ -21,9 +21,18 @@ class Tarantool
     }
 
     /**
-     *
+     * Closes connection to the server.
      */
     public function close()
+    {
+    }
+
+    /**
+     * Alias for close() method.
+     *
+     * @see Tarantool::close()
+     */
+    public function disconnect()
     {
     }
 
@@ -151,7 +160,8 @@ class Tarantool
     }
 
     /**
-     * Alias for flush_schema() method
+     * Alias for flush_schema() method.
+     *
      * @see Tarantool::flush_schema()
      */
     public function flushSchema()
