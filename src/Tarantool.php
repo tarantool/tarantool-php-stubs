@@ -1,19 +1,23 @@
 <?php
 
 /**
- * This is a stub file of tarantool-php extension for various PHP IDEs
+ * This is a stub file of tarantool-php extension for various PHP IDEs.
  */
 class Tarantool
 {
     /**
-     * @param string|null $host Default to 'localhost'.
-     * @param int|null    $port Default to 3301.
+     * Constructs a Tarantool object.
+     *
+     * @param string|null $host Server hostname or IP-address. Default to 'localhost'.
+     * @param int|null    $port Server port. Default to 3301.
      */
     public function __construct($host = null, $port = null)
     {
     }
 
     /**
+     * Creates a connection to the host and port specified in __construct().
+     *
      * @throws Exception
      */
     public function connect()
@@ -21,7 +25,7 @@ class Tarantool
     }
 
     /**
-     * Closes connection to the server.
+     * Closes a connection to the server.
      */
     public function close()
     {
@@ -45,6 +49,8 @@ class Tarantool
     }
 
     /**
+     * Sends an empty request and receives an empty response from the server.
+     *
      * @return bool
      */
     public function ping()
@@ -52,8 +58,8 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space        Space number or name
-     * @param array           $key          Key can be scalar or php array (may be empty)
+     * @param string|int      $space        Space number or name.
+     * @param array           $key          Key can be scalar or php array (may be empty).
      * @param string|int|null $index
      * @param int|null        $limit
      * @param int|null        $offset
@@ -66,7 +72,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int $space     Space number or name
+     * @param string|int $space  Space number or name.
      * @param array      $values
      *
      * @return array
@@ -76,7 +82,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int $space     Space number or name
+     * @param string|int $space  Space number or name.
      * @param array      $values
      *
      * @return array
@@ -86,8 +92,8 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space        Space number or name
-     * @param int             $key          Key can be scalar or php array (may be empty)
+     * @param string|int      $space      Space number or name.
+     * @param int             $key        Key can be scalar or php array (may be empty).
      * @param array           $operations
      * @param string|int|null $index
      *
@@ -113,6 +119,7 @@ class Tarantool
      * )
      *
      * <serializable> - any simple type which converts to MsgPack (scalar/array).
+     *
      * ":" - command `splice` - replace "length" bites in "field" to "list" beginning from "offset".
      * "+" - add "arg" to "field"
      * "-" - sub "arg" from "field"
@@ -129,7 +136,7 @@ class Tarantool
     }
 
     /**
-     * @param string|int      $space Space number or name
+     * @param string|int      $space Space number or name.
      * @param array           $key
      * @param string|int|null $index
      *
@@ -140,8 +147,10 @@ class Tarantool
     }
 
     /**
-     * @param string     $functionName Stored procedure (function) name
-     * @param array|null $args
+     * Calls stored Lua function.
+     *
+     * @param string     $functionName Stored Lua function name.
+     * @param array|null $args         An array of function arguments.
      *
      * @return array
      */
@@ -150,7 +159,9 @@ class Tarantool
     }
 
     /**
-     * @param string     $expr
+     * Evaluates a Lua expression.
+     *
+     * @param string     $expr A Lua expression.
      * @param array|null $args
      *
      * @return array
