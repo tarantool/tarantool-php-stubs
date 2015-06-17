@@ -43,6 +43,8 @@ class Tarantool
     /**
      * @param string $username
      * @param string $password
+     *
+     * @throws Exception
      */
     public function authenticate($username, $password)
     {
