@@ -138,12 +138,13 @@ class Tarantool
     }
 
     /**
-     * @param string|int $space Space number or name.
-     * @param array      $key
+     * @param string|int      $space Space number or name.
+     * @param array           $key
+     * @param string|int|null $index
      *
      * @return array
      */
-    public function delete($space, array $key)
+    public function delete($space, array $key, $index = null)
     {
     }
 
